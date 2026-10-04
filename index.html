@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laibah Bakhtawar | Software Engineering Student</title>
+<meta name="description" content="Portfolio of Laibah Bakhtawar, a Software Engineering student exploring data analytics, web development and agentic AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1517; --surface:#11201f; --surface-2:#162a29; --border:#1f3a38;
+  --text:#e4f1ef; --muted:#93aca8; --accent:#2dd4bf; --accent-2:#34d399; --on-accent:#06201c;
+  --glow:rgba(45,212,191,.16);
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"DM Sans","Segoe UI",system-ui,sans-serif;
+}
+:root[data-theme="light"]{
+  --bg:#f2f9f8; --surface:#ffffff; --surface-2:#e8f4f2; --border:#cfe5e1;
+  --text:#10282a; --muted:#4d6b68; --accent:#0f766e; --accent-2:#059669; --on-accent:#ffffff;
+  --glow:rgba(15,118,110,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;font-size:17px;transition:background .3s,color .3s}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
+.links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px;font-size:.95rem;transition:color .2s,background .2s}
+.links a:hover{color:var(--text);background:var(--surface-2)}
+#toggle{border:1px solid var(--border);background:var(--surface);color:var(--text);width:40px;height:40px;border-radius:12px;cursor:pointer;font-size:1.1rem;transition:background .2s}
+#toggle:hover{background:var(--surface-2)}
+
+/* Hero */
+.hero{position:relative;padding:96px 0 72px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:560px;height:560px;background:radial-gradient(circle,var(--glow),transparent 65%);pointer-events:none}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.03em;max-width:12ch}
+.hero .role{margin-top:22px;font-size:1.2rem;color:var(--muted);max-width:56ch}
+.hero .role strong{color:var(--accent);font-weight:700}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:12px;transition:transform .2s,background .2s}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{border:1px solid var(--border);background:var(--surface)}
+.btn:hover{transform:translateY(-2px)}
+.status{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:6px 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface);font-size:.92rem;color:var(--muted)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 0 var(--accent-2);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* Sections */
+section{padding:56px 0}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);letter-spacing:-.02em;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:28px;max-width:60ch}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--accent)}
+.card h3{font-family:var(--display);font-size:1.25rem;margin-bottom:6px}
+.card p,.card li{color:var(--muted);font-size:.98rem}
+.card ul{padding-left:18px;margin-top:10px}
+.card li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{padding:5px 12px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);font-size:.88rem;color:var(--text)}
+.tag{display:inline-block;margin-bottom:14px;padding:3px 10px;border-radius:8px;background:var(--glow);color:var(--accent);font-size:.85rem;font-weight:700}
+.card .more{display:inline-block;margin-top:16px;color:var(--accent);font-weight:700;text-decoration:none}
+.card .more:hover{text-decoration:underline}
+.meta{color:var(--accent);font-size:.92rem;font-weight:500;margin-bottom:10px}
+.stats{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center}
+.stats img{max-width:100%;height:auto;border-radius:14px}
+[data-theme="dark"] .light-only,[data-theme="light"] .dark-only{display:none}
+footer{padding:40px 0 56px;color:var(--muted);text-align:center;border-top:1px solid var(--border);margin-top:32px;font-size:.95rem}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .dot{animation:none}
+  .btn:hover{transform:none}
+}
+@media (max-width:640px){.links a:not(.keep){display:none}.hero{padding:64px 0 48px}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="#top">Laibah B.</a>
+    <div class="links">
+      <a href="#about" class="keep">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects" class="keep">Projects</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact" class="keep">Contact</a>
+      <button id="toggle" aria-label="Switch between dark and light theme" type="button">☾</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="status reveal"><span class="dot" aria-hidden="true"></span>Open to internships</div>
+      <h1 class="reveal">Laibah Bakhtawar</h1>
+      <p class="role reveal">Software Engineering student at Fatima Jinnah Women University. I build practical software and I am growing in <strong>data analytics</strong>, <strong>web development</strong> and <strong>agentic AI</strong>.</p>
+      <div class="cta reveal">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/laibah-bakhtawar" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="reveal">About me</h2>
+      <p class="sub reveal">Class of 2028, based in Islamabad/Rawalpindi, Pakistan.</p>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>What I do</h3>
+          <p>I like turning ideas into working software and data into clear insight. My foundation is in C++ and SQL, and I am now deepening my Python, front-end and AI skills.</p>
+        </div>
+        <div class="card reveal">
+          <h3>What I am looking for</h3>
+          <p>An internship in data analytics, web development or AI where I can contribute to a team, learn from experienced engineers and ship real work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2 class="reveal">Skills</h2>
+      <p class="sub reveal">The tools I use, grouped by what I use them for.</p>
+      <div class="grid g3">
+        <div class="card reveal">
+          <h3>Programming</h3>
+          <div class="chips"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">SQL</span><span class="chip">JavaScript (basics)</span></div>
+        </div>
+        <div class="card reveal">
+          <h3>Web and design</h3>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">UX Design</span></div>
+        </div>
+        <div class="card reveal">
+          <h3>Tools</h3>
+          <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">SQL Server (SSMS)</span><span class="chip">Excel</span><span class="chip">Word</span><span class="chip">PowerPoint</span></div>
+        </div>
+        <div class="card reveal">
+          <h3>AI</h3>
+          <div class="chips"><span class="chip">Prompt Engineering</span><span class="chip">Agentic AI (exploring)</span></div>
+        </div>
+        <div class="card reveal">
+          <h3>Working with people</h3>
+          <div class="chips"><span class="chip">Communication</span><span class="chip">Team Collaboration</span><span class="chip">Problem Solving</span><span class="chip">Time Management</span><span class="chip">Presentation</span></div>
+        </div>
+        <div class="card reveal">
+          <h3>Languages</h3>
+          <div class="chips"><span class="chip">Urdu (native)</span><span class="chip">English (fluent)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2 class="reveal">Projects</h2>
+      <p class="sub reveal">Three C++ projects covering arrays, object-oriented design and data structures.</p>
+      <div class="grid g3">
+        <article class="card reveal">
+          <span class="tag">C++</span>
+          <h3>Bus Reservation System</h3>
+          <p>A console app for 5 buses with 32 seats each. Handles seat booking, cancellation and tickets, with Normal and AC bus types and route-based pricing.</p>
+          <ul><li>2D arrays, structs and enums</li><li>Input validation and passenger tracking</li></ul>
+          <a class="more" href="https://github.com/USERNAME/bus-reservation-system" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+        <article class="card reveal">
+          <span class="tag">C++ and OOP</span>
+          <h3>Finance Manager System</h3>
+          <p>A salary budget manager built on a base Category class with 8+ derived classes such as Rent, Car, Health and Entertainment.</p>
+          <ul><li>Inheritance, polymorphism, virtual functions</li><li>Dynamic memory and savings auto-calculation</li></ul>
+          <a class="more" href="https://github.com/USERNAME/finance-manager-system" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+        <article class="card reveal">
+          <span class="tag">C++ and Data Structures</span>
+          <h3>Car Rental System</h3>
+          <p>Manages 40+ vehicles across 4 categories with rent, return and availability tracking, plus receipt generation.</p>
+          <ul><li>Doubly Linked List for traversal</li><li>Binary Search Tree for O(log n) lookup by ID</li></ul>
+          <a class="more" href="https://github.com/USERNAME/car-rental-system" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="wrap">
+      <h2 class="reveal">Leadership</h2>
+      <div class="card reveal" style="margin-top:24px">
+        <h3>Sponsorship and Logistics Team Lead</h3>
+        <p class="meta">AI Community of Pakistan, FJWU Chapter | Oct 2025 to present</p>
+        <ul>
+          <li>Coordinate a cross-functional volunteer team through event planning, execution and post-event reporting.</li>
+          <li>Write and present sponsorship proposals and partnership decks to secure resources and in-kind support.</li>
+          <li>Manage vendor communication, budgets and resource allocation to keep events on scope and on time.</li>
+          <li>Work with chapter leads and university administration to align events with AI awareness goals.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <h2 class="reveal">Certifications</h2>
+      <div class="grid g3" style="margin-top:24px">
+        <div class="card reveal"><h3>Google Data Analytics</h3><p>Professional Certificate</p></div>
+        <div class="card reveal"><h3>Microsoft UX Design</h3><p>Professional Certificate</p></div>
+        <div class="card reveal"><h3>Meta Front-End Developer</h3><p>Professional Certificate</p></div>
+        <div class="card reveal"><h3>Introduction to AI</h3><p>IBM</p></div>
+        <div class="card reveal"><h3>Google Prompting Essentials</h3><p>Specialization</p></div>
+        <div class="card reveal"><h3>Google AI Essentials</h3><p>Specialization</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats">
+    <div class="wrap">
+      <h2 class="reveal">GitHub activity</h2>
+      <div class="stats reveal" style="margin-top:24px">
+        <img class="dark-only" height="170" loading="lazy" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&theme=transparent&title_color=2dd4bf&icon_color=34d399&text_color=e4f1ef&hide_border=true">
+        <img class="light-only" height="170" loading="lazy" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&theme=transparent&title_color=0f766e&icon_color=059669&text_color=10282a&hide_border=true">
+        <img class="dark-only" height="170" loading="lazy" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=transparent&title_color=2dd4bf&text_color=e4f1ef&hide_border=true">
+        <img class="light-only" height="170" loading="lazy" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=transparent&title_color=0f766e&text_color=10282a&hide_border=true">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="card reveal" style="text-align:center;padding:44px 26px">
+        <h2>Let's talk</h2>
+        <p class="sub" style="margin:0 auto 24px">I am open to internships and collaborations in data, web and AI. The best way to reach me is on LinkedIn.</p>
+        <a class="btn primary" href="https://www.linkedin.com/in/laibah-bakhtawar" target="_blank" rel="noopener">Message me on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Laibah Bakhtawar</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('toggle');
+  function apply(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'☾':'☀';}
+  var saved=null;
+  try{saved=localStorage.getItem('theme');}catch(e){}
+  if(!saved&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){saved='light';}
+  apply(saved||'dark');
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    apply(next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    items.forEach(function(el){io.observe(el);});
+  }else{items.forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>
